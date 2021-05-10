@@ -25,9 +25,6 @@ class Solution:
         for i in range(len(matrix)):
             if not target > matrix[i][-1]:
                 a = binarySearch(matrix[i], 0, len(matrix[i])-1, target)
-                if a != -1:
-                    return True
-                else:
-                    return False
+                return a != -1
         return False
         
