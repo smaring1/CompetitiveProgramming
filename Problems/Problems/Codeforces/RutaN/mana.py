@@ -9,4 +9,6 @@ if len(nodes) > 1:
         temp += nodes[i]
         if temp < mini:
             mini = temp 
+else:
+    mini = nodes[0] if nodes[0] < 0 else 0
 print(abs(mini))
