@@ -7,20 +7,17 @@ class Solution(object):
         """
         if not head:
             return head
-		
-		#find length
-        size = 1
-        cur = head
-        while cur.next:
-            size += 1
-            cur = cur.next
-        if k % size == 0:
+        length, tail = 1, head
+        while tail.next:
+            length += 1
+            tail = tail.next
+        k = k % length
+        if k == 0:
             return head
-        tail = cur
         cur = head
-        for i in range(size - k % size - 1):
+        for i in range(length-k-1):
             cur = cur.next
-        tail.next = head
-        new_head = cur.next
+        newHead = cur.next
         cur.next = None
-        return new_head
+        tail.next = head
+        return newHead
