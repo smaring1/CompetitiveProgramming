@@ -1,11 +1,11 @@
 class Solution:
     def findComplement(self, num: int) -> int:
-        sol = ''
-        binary = bin(num)
-        for i in binary[2:]:
-            if i == '0':
-                sol += '1'
-            else:
-                sol += '0'
-        sol = int('0b' + sol, 2)
-        return sol
+        return int('0b'+''.join(list(map(lambda x: '0' if x == '1' else '1', bin(num)[2:]))), 2)
+    
+    
+
+class Solution:
+    def findComplement(self, num: int) -> int:
+        num = bin(num)
+        sol = list(map(lambda x: '0' if x == '1' else '1', num[2:]))
+        return int('0b'+''.join(sol), 2)
