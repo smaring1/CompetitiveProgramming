@@ -10,6 +10,5 @@ class Solution:
         def t(root, depth):
             if not root:
                 return depth
-            depth = max(t(root.left, depth+1), t(root.right, depth+1))
-            return depth
+            return max(t(root.left, depth+1), t(root.right, depth+1))
         return t(root, depth)
